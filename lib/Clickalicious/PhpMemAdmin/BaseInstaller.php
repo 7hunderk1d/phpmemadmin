@@ -62,7 +62,7 @@ if (php_sapi_name() !== 'cli') {
  * @link       https://github.com/clickalicious/phpMemAdmin
  */
 
-use Composer\Script\CommandEvent;
+use Composer\Script\Event;
 
 ini_set('html_errors', 0);
 
@@ -308,14 +308,14 @@ class BaseInstaller
     /**
      * Retrieve arguments from global to prepare them for further use.
      *
-     * @param CommandEvent $event The Composer event fired to retrieve arguments from
+     * @param Event $event The Composer event fired to retrieve arguments from
      *
      * @author Benjamin Carl <opensource@clickalicious.de>
      * @return bool TRUE on success, otherwise FALSE
      * @access protected
      * @static
      */
-    protected static function initArguments(CommandEvent $event = null)
+    protected static function initArguments(Event $event = null)
     {
         // Check for retrieving arguments from Composer event ...
         if ($event !== null) {

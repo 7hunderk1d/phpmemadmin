@@ -62,7 +62,7 @@ if (php_sapi_name() !== 'cli') {
  * @link       https://github.com/clickalicious/phpMemAdmin
  */
 
-use Composer\Script\CommandEvent;
+use Composer\Script\Event;
 
 require_once 'Exception.php';
 require_once 'BaseInstaller.php';
@@ -128,14 +128,14 @@ class Installer extends BaseInstaller
     /**
      * Installer process for project based on post install event hook on composer.
      *
-     * @param CommandEvent $event The event passed in by Composer.
+     * @param Event $event The event passed in by Composer.
      *
      * @author Benjamin Carl <opensource@clickalicious.de>
      * @return boolean|null TRUE on success, otherwise FALSE (signal for Composer to resolve with error)
      * @access public
      * @static
      */
-    public static function postInstall(CommandEvent $event)
+    public static function postInstall(Event $event)
     {
         // Detect path to composer.json
         self::setInstallPath(
@@ -164,7 +164,7 @@ class Installer extends BaseInstaller
      * @return boolean|null TRUE on success, otherwise FALSE
      * @access protected
      */
-    protected static function handleEvent(CommandEvent $event)
+    protected static function handleEvent(Event $event)
     {
         $valid = false;
 
