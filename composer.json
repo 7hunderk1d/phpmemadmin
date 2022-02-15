@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Clickalicious\\PhpMemAdmin\\": "lib/Clickalicious/PhpMemAdmin/"
+      "7hunderk1d\\PhpMemAdmin\\": "lib/Clickalicious/PhpMemAdmin/"
     }
   },
   "include-path": ["lib/"],
